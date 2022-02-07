@@ -53,10 +53,16 @@ console.log("character c, in variable letters, is index 2 => ", letters[2]);
 let fact = "You are learning javascript!";
 
 // capitalize the J in Javascript
-fact = fact.toLowerCase().split(' ');
-let factThree = fact[3][0].toUpperCase() + (fact[3].slice(1,))
+// *** the long way ********
+  /*
+    fact = fact.toLowerCase().split(' ');
+    let factThree = fact[3][0].toUpperCase() + (fact[3].slice(1,))
+    console.log("capitalized j: ", factThree);
+   */
 
-console.log("capitalized j: ", factThree);
+  // short and neat way (one liner)  
+  console.log(fact.replace('j', 'J'));
+
 // --------------------------------------
 
 

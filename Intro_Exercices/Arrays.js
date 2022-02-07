@@ -24,7 +24,7 @@ const significantMathNumbers = [0, 2.718, 3.14159, 1729];
 // You want to programmatically find where the number 1729 is in the array.
 // programmatically means that no finger counting allowed. There is a method for this (finding index based of value). 
 
-// *** Using Arrow function - do not know if allowed with callback function ***
+// *** Using Lambda ***
 const index = significantMathNumbers.findIndex(number => number === 1729);
 console.log("Index of number 1729 is: " ,index);
 console.log(significantMathNumbers[index]);
@@ -74,14 +74,12 @@ console.log("Spread operator to copy Array: ", dinnerTray2);
 // Exercise 7 - For loop
 
 const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
-let everySecond = [];
-// log every second char in the array starting from b
-for(let i=1; i<lettersExpanded.length;i++){
-  i += i+1
-  everySecond.push(lettersExpanded[i])
-}
 
-console.log(everySecond);
+console.log("Every second value: ");
+  for (i=1; i <= lettersExpanded.length-1; i+=2) {
+    console.log(lettersExpanded[i]);
+  }
+
 // --------------------------------------
 // Exercise 8 - For loop and if statement
 
@@ -91,16 +89,20 @@ const discardedNumbers = [];
 
 // log the element if the number is above 6 or below 0
 // else push them to the array discardedNumbers
-for (let i = 0; i < numbers.length; i++) {
-  if(numbers[i] > 6 && numbers[i] < 0){
-    console.log(i);
-    break;
-  }else{
-    discardedNumbers.push(i);
-    break;
+
+
+const filteredNum = numbers.filter((number) =>{
+  if(number < 0 || number > 6){
+    return number;
   }
-}
-console.log(numbers);
+  else{
+    discardedNumbers.push(number);
+  }
+});
+console.log("Numbers list: [5, 3, 2, 7, 11, 12, 0, -20, 6]");
+console.log("filtered numbers, above 6 and below 0, are: ", filteredNum);
+console.log("discarded numbers: ", discardedNumbers);
+      
 // --------------------------------------
 
 
